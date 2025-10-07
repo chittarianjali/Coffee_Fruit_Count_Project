@@ -1,0 +1,8 @@
+path: dataset/train/Coffee Fruit Maturity ---.v1i.yolov8
+
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 3
+names: ['green', 'yellow', 'red']

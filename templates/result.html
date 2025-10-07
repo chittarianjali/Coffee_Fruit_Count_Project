@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🍒 Coffee Fruit Counter - Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f9f9f9;
+            color: #2c3e50;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 30px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;  /* ✅ more space between images */
+            margin-bottom: 30px;
+        }
+        .image-box {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 350px;  /* ✅ controlled size */
+        }
+        .image-box h3 {
+            margin-bottom: 10px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .counts {
+            margin-top: 20px;
+            display: inline-block;
+            text-align: left;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .counts p {
+            font-size: 18px;
+            margin: 6px 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #6c5ce7;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>🍒 Coffee Fruit Counter - Result</h2>
+
+    <div class="image-container">
+        <div class="image-box">
+            <h3>Uploaded Image</h3>
+            <img src="{{ url_for('static', filename=uploaded) }}">
+        </div>
+        <div class="image-box">
+            <h3>Analysed Image</h3>
+            <img src="{{ url_for('static', filename=image) }}">
+        </div>
+    </div>
+
+    <div class="counts">
+        <p>✅ Green: {{ counts.green }}</p>
+        <p>🟨 Green-Olive: {{ counts.yellow }}</p>
+        <p>🔴 Cherry: {{ counts.red }}</p>
+        <hr>
+        <p><b>🍒 Total Fruits: {{ total }}</b></p>
+    </div>
+
+    <a href="/">⬅ Back</a>
+</body>
+</html>
